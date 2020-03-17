@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+  .header {
+    padding: 0 50px 0 200px;
+    background-color: #eee;
+    height: 80px;
+    display: flex;
+    line-height: 80px;
+    justify-content: space-between;
+    &__name {
+      width: 80%;
+      font-size: 35px;
+      color: #333;
+      font-family :'Impact';
+      &__title {
+      }
+    }
+    &__posts {
+      justify-content: space-between;
+      display: flex;
+      width: 20%;
+    }
+  }
+  .contents {
+  }
+}
