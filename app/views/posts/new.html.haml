@@ -12,9 +12,9 @@
       %h3投稿する
       .name
         = f.text_field :word, class: "word__text", placeholder: "word"
-      .image
-        = f.text_field :image, class: "image__text", placeholder: "Image Url"
       .title
         = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
+      .image
+        = f.file_field :image, class: "image__text", placeholder: "Image Url"
       .submit
         = f.submit "SEND"
