@@ -1,3 +1,30 @@
-.wrapper
-  = render "header"
-  = render "contents"
+.header
+  .header__name
+    usernameの料理
+  .header__posts
+    .header__log
+      ログイン
+    .header__btn
+      投稿
+.contents
+  .search
+    %form
+      %input.text-field{:type => "text"}/
+      %button.submit{:type => "submit"} 検索
+  .content
+    - @posts.each do |post|
+      .content__box{:style => "background-image: url(#{post.image});"}
+        %p.content__box__title
+          aaa
+          -# = simple_format(tweet.title)
+        %span.content__box__name
+          aaaaaaaa
+
+    .content__box
+    .content__box
+    .content__box
+    .content__box
+    .content__box
+    .content__box
+    .content__box
+.footer
