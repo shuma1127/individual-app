@@ -1,9 +1,20 @@
+.header
+  .header__name
+    usernameの料理
+  .header__posts
+    .header__log
+      ログイン
+    .header__btn
+      新規投稿
 .contents.row
   .container
     = form_with(model: @tweet, local: true) do |form|
-      %h3
-        投稿する
-      = form.text_field :name, placeholder: "Nickname"
-      = form.text_field :image, placeholder: "Image Url"
-      = form.text_area :text, placeholder: "text" , rows: "10"
-      = form.submit "SEND"
+      %h3投稿する
+      .name
+        = form.text_field :name, class: "name__text", placeholder: "Nickname"
+      .image
+        = form.text_field :image, class: "image__text", placeholder: "Image Url"
+      .title
+        = form.text_field :text, class: "title__text", placeholder: "text" , rows: "10"
+      .submit
+        = form.submit "SEND"
