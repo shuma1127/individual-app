@@ -9,12 +9,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(posts_params)
+    Post.create(post_params)
   end
 
   private
-  def tweet_params
-    params.permit(:name, :image, :title)
+  def post_params
+    params.require(:post).permit(:name, :image, :title)
   end
 
 end
