@@ -10,7 +10,7 @@
   .container
     = form_with(model: @post, local: true) do |f|
       %h3投稿する
-      .name
+      .word
         = f.text_field :word, class: "word__text", placeholder: "word"
       .title
         = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"

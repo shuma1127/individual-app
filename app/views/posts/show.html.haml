@@ -1,0 +1,12 @@
+.contents.row
+  .content_post{style: "background-image: url(#{@post.image});"}
+    .more
+      %span= image_tag 'arrow_top.png'
+      %ul.more_list
+        %li
+          = link_to '編集', "/posts/#{@post.id}/edit", method: :get
+        %li
+          = link_to '削除', "/posts/#{@post.id}", method: :delete
+    = simple_format(@post.title)
+    %span.name
+      = @post.title
