@@ -15,10 +15,9 @@
     - @posts.each do |post|
       .content__box{:style => "background-image: url(#{post.image});"}
         %p.content__box__title
-          aaa
-          -# = simple_format(tweet.title)
-        %span.content__box__name
-          aaaaaaaa
+          = post.title
+        %span.content__box__word
+          = post.word
 
     .content__box
     .content__box
