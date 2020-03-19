@@ -8,13 +8,13 @@
       新規投稿
 .contents.row
   .container
-    = form_with(model: @tweet, local: true) do |form|
+    = form_with(model: @post, local: true) do |f|
       %h3投稿する
       .name
-        = form.text_field :name, class: "name__text", placeholder: "Nickname"
+        = f.text_field :word, class: "word__text", placeholder: "word"
       .image
-        = form.text_field :image, class: "image__text", placeholder: "Image Url"
+        = f.text_field :image, class: "image__text", placeholder: "Image Url"
       .title
-        = form.text_field :text, class: "title__text", placeholder: "text" , rows: "10"
+        = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
       .submit
-        = form.submit "SEND"
+        = f.submit "SEND"

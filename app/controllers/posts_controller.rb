@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @tweet = Post.new
+    @post = Post.new
   end
 
   def create
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:name, :image, :title)
+    params.require(:post).permit(:word, :image, :title)
   end
 
 end
