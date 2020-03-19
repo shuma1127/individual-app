@@ -13,7 +13,12 @@
       %button.submit{:type => "submit"} 検索
   .content
     - @posts.each do |post|
-      .content__box{:style => "background-image: url(#{post.image});"}
+      .content__box{style: "background-image: ur(#{post.image});"}
+        .more
+          %span= image_tag 'arrow_top.png'
+          %ul.more_list
+            %li= link_to '削除', "/posts/#{post.id}", method: :delete
+
         %p.content__box__title
           = post.title
         %span.content__box__word
