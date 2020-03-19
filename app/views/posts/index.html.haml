@@ -9,8 +9,8 @@
 .contents
   .search
     %form
-      %input.text-field{:type => "text"}/
-      %button.submit{:type => "submit"} 検索
+      %input.text-field{type: "text"}/
+      %button.submit{type: "submit"} 検索
   .content
     - @posts.each do |post|
       .content__box{style: "background-image: ur(#{post.image});"}
