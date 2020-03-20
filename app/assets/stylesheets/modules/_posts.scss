@@ -59,35 +59,36 @@
     .content {
       display: flex;
       flex-wrap: wrap;
+      .title {
+        margin-top: 20px;
+      }
       .content__box {
-        background-color: honeydew;
-        height: 200px;
-        width: 24%;
-        margin: 15px 5px 5px 5px;
-        position: relative;
+        margin: 3px 5px 5px 5px;
         object-fit: cover;
+        border: 1px solid black;
+        position: relative;
+        &__image {
+          // border: 2px solid brown;
+        }
         .more {
           &__list {
             .icon {
+              position: absolute;
+              top: 0;
+              right: 2px;
               text-decoration: none;
               color: red;
+              font-size: 25px;
+            }
+            .edit {
+              position: absolute;
+              top: 35px;
+              right: 0;
+              text-decoration: none;
+              color:blue;
+              font-size: 23px;
             }
           }
-        }
-
-        &__title{
-          padding: 2px 2px;
-          font-size: 86%;
-          color: #fff;
-          background: #333;
-          position: absolute;
-          top: 0;
-          left: 0;
-          }
-        &__word{
-          background-color: red;
-          position: absolute;
-          bottom: 0;
         }
       }
     }
@@ -96,7 +97,3 @@
     background-color: gray;
     height: 20px;
   }
-
-
-
-
