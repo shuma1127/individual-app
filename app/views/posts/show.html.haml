@@ -1,5 +1,14 @@
+.header
+  .header__name
+    usernameの料理
+  .header__posts
+    .header__log
+      ログイン
+    .header__btn
+      新規投稿
 .contents.row
-  .content_post{style: "background-image: url(#{@post.image});"}
+  .content_post
+    = image_tag @post.image.url
     .more
       %span= image_tag 'arrow_top.png'
       %ul.more_list
@@ -10,3 +19,4 @@
     = simple_format(@post.title)
     %span.name
       = @post.title
+
