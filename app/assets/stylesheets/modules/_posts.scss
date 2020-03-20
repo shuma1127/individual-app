@@ -13,49 +13,50 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 0 50px 0 200px;
+    padding: 0 70px 0 150px;
     background-color: #fafafa;
     height: 80px;
     display: flex;
     line-height: 80px;
     justify-content: space-between;
-
     &__name {
-      width: 85%;
+      width: 35%;
       font-size: 35px;
       color: #333;
       font-family :'Impact';
-      &__title {
-      }
     }
-
-    &__posts {
-      justify-content: space-between;
-      display: flex;
-      width: 15%;
-    }
-  }
-
-  .contents {
-    height: calc(100vh - 80px);
-    padding: 90px 20px 20px;
-    background-color:　#ffffff;
-    overflow: scroll;
     .search {
       display: flex;
+      padding-top: 20px;
       .text-field {
         float: left;
-        height: 30px;
+        height: 40px;
+        width: 300px;
       }
       .submit {
-        height: 30px;
-        width: 60px;
+        height: 40px;
+        width: 80px;
         float: left;
         margin-left: 10px;
         font-size: 10px;
         background-color: lightblue;
       }
     }
+    &__posts {
+      display: flex;
+      width: 25%;
+      .user-name {
+        padding: 0 60px 0 60px;
+      }
+    }
+  }
+  
+
+  .contents {
+    height: calc(100vh - 30px);
+    padding: 90px 20px 20px;
+    background-color:#ffffff;
+    overflow: scroll;
     .content {
       display: flex;
       flex-wrap: wrap;
@@ -95,5 +96,5 @@
   }
   .footer {
     background-color: gray;
-    height: 20px;
+    height: 30px;
   }

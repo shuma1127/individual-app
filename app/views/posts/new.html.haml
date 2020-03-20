@@ -1,11 +1,3 @@
-.header
-  .header__name
-    usernameの料理
-  .header__posts
-    .header__log
-      ログイン
-    .header__btn
-      新規投稿
 .contents.row
   .container
     = form_with(model: @post, local: true) do |f|
@@ -14,6 +6,8 @@
         = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
       .word
         = f.text_field :word, class: "word__text", placeholder: "word"
+      .review
+        = f.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
       .image
         = f.file_field :image, class: "image__text"
       .submit
