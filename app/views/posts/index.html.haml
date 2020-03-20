@@ -19,7 +19,7 @@
           = post.word
         - if post.image.present?
           .content__box  
-            = image_tag post.image.url, class: 'content__box__image' if post.image.present?
+            = image_tag post.image.url, class: 'content__box__image'
             .more
               %span= image_tag 'arrow_top.png'
               %ul.more__list
