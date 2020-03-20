@@ -1,11 +1,13 @@
 .header
   .header__name
-    usernameの料理
+    = @name
+    の料理
   .header__posts
     - if user_signed_in?
       .user_nav.grid-6
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "マイページ", "/users/#{current_user.id}" 
         = link_to  "投稿する", "/posts/new", class: "post"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
     - else
       .grid-6
         = link_to "ログイン", new_user_session_path, class: 'post'
@@ -15,8 +17,13 @@
     -#   ログイン
     -# .header__btn
     -#   新規投稿
+-# %span
+-#   = current_user.name
+-#   %ul.user__info
+-#     %li
 
-≈
+-#       = link_to "ログアウト", destroy_user_session_path, method: :delete
+
 
 
 .contents
