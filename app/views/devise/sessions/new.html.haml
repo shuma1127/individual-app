@@ -5,7 +5,7 @@
       %h5 登録しているユーザーでログイン
       = render "devise/shared/links"
     .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
         .field
           .field-label
             = f.label :email
