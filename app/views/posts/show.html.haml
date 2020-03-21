@@ -1,6 +1,5 @@
 .header
   .header__name
-    usernameの料理
   .header__posts
     .header__log
       ログイン
@@ -13,10 +12,17 @@
       %span= image_tag 'arrow_top.png'
       %ul.more_list
         %li
-          = link_to '編集', "/posts/#{@post.id}/edit", method: :get
+          = link_to '編集', edit_post_path(@post.id), method: :get
         %li
-          = link_to '削除', "/posts/#{@post.id}", method: :delete
-    = simple_format(@post.title)
-    %span.name
+          = link_to '削除', post_path(@post.id), method: :delete
+    .title
       = @post.title
+    .where
+      = @post.where
+    .word
+      = @post.word
+    .review
+      = safe_join(@post.review.split("\n"),tag(:br))
+
+    -#  <%=safe_join(@text.split("\n"),tag(:br))%>
 
