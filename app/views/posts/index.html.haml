@@ -1,6 +1,6 @@
 .header
   .header__name
-    Cooking review
+    = link_to "Cooking reviews", root_path, class: 'header__title' 
   .search
     %form
       %input.text-field{type: "text"}/
@@ -10,24 +10,21 @@
   .header__posts
     - if user_signed_in?
       .header__posts__right
-        = link_to "nickname", "/users/#{current_user.id}", class: 'user-name'
-        = link_to  "投稿", "/posts/new", class: "post-btn"
-      -# = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "新規投稿", new_post_path, class: "user-name"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post-btn"
+        
     - else
       .header__posts__right
         = link_to "ログイン", new_user_session_path, class: 'post'
         = link_to "新規登録", new_user_registration_path, class: 'post'
 
-    -# .header__log
-    -#   ログイン
-    -# .header__btn
-    -#   新規投稿
--# %span
--#   = current_user.name
--#   %ul.user__info
--#     %li
+  -# - if user_signed_in?
+  -#   = link_to "新規投稿", new_post_path, class: "user-name"
+  -#   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post-btn"
+  -# - else
+  -#   = link_to "ログイン", new_user_session_path, class: "header__right--btn"
+  -#   = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
 
--#       = link_to "ログアウト", destroy_user_session_path, method: :delete
 
 
 
@@ -35,10 +32,16 @@
   .content
     - @posts.each do |post|
       .content__box
+        .name
+          = post.user.nickname
         .title
           = post.title
+        .where
+          = post.where
         .word
           = post.word
+        .time
+          = post.created_at.to_s(:datetime_jp)
         %ul.more
           %li= link_to icon('fas', 'times-circle', class: 'icon'), "/posts/#{post.id}", method: :delete
           %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get 

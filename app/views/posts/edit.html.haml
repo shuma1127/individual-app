@@ -4,12 +4,14 @@
       %h3編集する
       .title
         = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
+      .where
+        = f.text_field :where, class: "where__text", placeholder: "place"
       .word
         = f.text_field :word, class: "word__text", placeholder: "word"
-      
+      .review
+        = f.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
       .image
         = f.file_field :image, class: "image__text"
-        
       .submit
         = f.submit "SEND"
 
