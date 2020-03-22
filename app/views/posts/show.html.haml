@@ -9,12 +9,18 @@
   .content_post
     = image_tag @post.image.url
     .more
+    - if user_signed_in? && current_user.id == @post.user_id
       %span= image_tag 'arrow_top.png'
       %ul.more_list
         %li
           = link_to '編集', edit_post_path(@post.id), method: :get
         %li
           = link_to '削除', post_path(@post.id), method: :delete
+    .name
+      %span.name
+        %a{:href => "/users/#{@post.user.id}"}
+          %span 投稿者
+          = @post.user.nickname
     .title
       = @post.title
     .where
@@ -23,6 +29,7 @@
       = @post.word
     .review
       = safe_join(@post.review.split("\n"),tag(:br))
+  = paginate(@posts)
 
     -#  <%=safe_join(@text.split("\n"),tag(:br))%>
 

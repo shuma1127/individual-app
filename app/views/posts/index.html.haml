@@ -12,44 +12,39 @@
         = link_to current_user.nickname, user_path(current_user), class: "name-btn"
         = link_to "新規投稿", new_post_path, class: "user-name"
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post-btn"
-        
     - else
       .header__posts__right
         = link_to "ログイン", new_user_session_path, class: 'post'
         = link_to "新規登録", new_user_registration_path, class: 'post'
-
-  -# - if user_signed_in?
-  -#   = link_to "新規投稿", new_post_path, class: "user-name"
-  -#   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post-btn"
-  -# - else
-  -#   = link_to "ログイン", new_user_session_path, class: "header__right--btn"
-  -#   = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
-
-
-
-
 .contents
   .content
     - @posts.each do |post|
       .content__box
         .name
-          = post.user.nickname
+          %a{:href => "/users/#{post.user.id}"}
+            %span 投稿者
+            = post.user.nickname
         .title
+          %span Title：
           = post.title
         .where
+          %span Place:
           = post.where
         .word
+          %span A word:
           = post.word
         .time
           = post.created_at.to_s(:datetime_jp)
         %ul.more
+          %li= link_to '詳細', "/posts/#{post.id}", method: :get
+        - if user_signed_in? && current_user.id == post.user_id
           %li= link_to icon('fas', 'times-circle', class: 'icon'), "/posts/#{post.id}", method: :delete
           %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get 
-          %li= link_to '詳細', "/posts/#{post.id}", method: :get
         .image
           - if post.image.present?  
             = image_tag post.image.url, class: 'image-post'
-
+  = paginate(@posts)
 .footer
+
 
 
