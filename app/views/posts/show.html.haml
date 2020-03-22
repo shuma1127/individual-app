@@ -1,10 +1,21 @@
 .header
   .header__name
+    = link_to "Restaurant　reviews", root_path, class: 'header__title' 
+  .search
+    %form
+      %input.text-field{type: "text"}/
+      %button.submit{type: "submit"} 
+        %i.fas.fa-search-location
   .header__posts
-    .header__log
-      ログイン
-    .header__btn
-      新規投稿
+    - if user_signed_in?
+      .header__posts__right
+        = link_to current_user.nickname, user_path(current_user), class: "name-btn"
+        = link_to "新規投稿", new_post_path, class: "user-name"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post-btn"
+    - else
+      .header__posts__right
+        = link_to "ログイン", new_user_session_path, class: 'post'
+        = link_to "新規登録", new_user_registration_path, class: 'post'
 .contents.row
   .content_post
     = image_tag @post.image.url
@@ -29,7 +40,7 @@
       = @post.word
     .review
       = safe_join(@post.review.split("\n"),tag(:br))
-  = paginate(@posts)
+    
 
-    -#  <%=safe_join(@text.split("\n"),tag(:br))%>
+   
 

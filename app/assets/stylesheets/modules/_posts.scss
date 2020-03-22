@@ -13,27 +13,26 @@
   height: 80px;
   display: flex;
   line-height: 80px;
-  justify-content: space-between;
+  position: relative;
   &__title {
     text-decoration: none;
     color: black;
   }
   &__name {
-    width: 35%;
-    font-size: 35px;
+    width: 30%;
+    font-size: 40px;
     color: #333;
     font-family :'Impact';
   }
   .search {
-    display: flex;
-    padding-top: 20px;
+    padding: 25px 0px 0px 40px;
     .text-field {
       float: left;
-      height: 40px;
-      width: 300px;
+      height: 35px;
+      width: 280px;
     }
     .submit {
-      height: 40px;
+      height: 35px;
       width: 80px;
       float: left;
       margin-left: 10px;
@@ -45,9 +44,12 @@
   }
   &__posts {
     display: flex;
-    width: 25%;
+    // width: 50%;
+    position: absolute;
+    right: 20px;
     .user-name {
       padding: 0 60px 0 60px;
+      justify-content: space-between;
     }
   }
 }
@@ -55,7 +57,7 @@
 
 .contents {
   height: calc(100vh - 30px);
-  padding: 90px 20px 20px;
+  padding: 30px 20px 20px;
   background-color :green;
   overflow: scroll;
   .content {
@@ -78,7 +80,46 @@
     }
   }
 }
-  
+// .page {
+//   padding-top: 20px;
+//   font-size: 20px;
+//   a {
+//     text-decoration: none;
+//     color: white; 
+//   }
+// }
+  .nav-links{
+    padding:2em;
+    display:flex;
+    justify-content:center;
+    background:#f3f3f3;
+  a,span{
+    width:50px;
+    height:50px;
+    margin:2px;
+    line-height:50px;
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+    text-decoration:none;
+    background:#fff;
+    color:#222;
+    transition:.3s;
+  }
+  a:hover{
+    background:gold;
+    border-radius:100%;
+    transform:rotate(360deg);
+  }
+  .current{
+    background:gold;
+    border-radius:100%;
+  }
+  .dots{
+    background:none;
+  }
+}
+    
 
 .footer {
   background-color: gray;
