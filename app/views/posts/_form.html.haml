@@ -1,14 +1,16 @@
-.title
-  = form.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
-.genre
-  = form.text_field :genre, class: "genre__text", placeholder: "genre"
-.where
-  = form.text_field :where, class: "where__text", placeholder: "place"
-.word
-  = form.text_field :word, class: "word__text", placeholder: "word"
-.review
-  = form.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
-.image
-  = form.file_field :image, class: "image__text"
-.submit
-  = form.submit "SEND"
+.container__left
+  .title
+    = form.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
+  .genre
+    = form.text_field :genre, class: "genre__text", placeholder: "genre"
+  .where
+    = form.text_field :where, class: "where__text", placeholder: "place"
+  .word
+    = form.text_field :word, class: "word__text", placeholder: "word"
+  .image
+    = form.file_field :image, class: "image__text"
+  .submit
+    = form.submit "SEND", class: "submit__btn"
+.container__right
+  .review
+    = form.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
