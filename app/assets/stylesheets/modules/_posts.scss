@@ -14,17 +14,18 @@
   display: flex;
   line-height: 80px;
   position: relative;
+  &__name {
+    width: 30%;
+    font-size: 40px;
+    font-weight: 900;
+    color: #333;
+    font-family: 'Corben', cursive;
+  }
   &__title {
     text-decoration: none;
     color: black;
   }
-  &__name {
-    width: 30%;
-    font-size: 40px;
-    color: #333;
-    font-family :'Impact';
-  }
-  .search {
+.search {
     padding: 25px 0px 0px 40px;
     .text-field {
       float: left;
@@ -53,6 +54,7 @@
     }
   }
 }
+
 
 
 .contents {
