@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_21_051331) do
+ActiveRecord::Schema.define(version: 2020_03_20_073438) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "where"
     t.string "word"
     t.string "title"
+    t.string "genre"
     t.string "review"
     t.string "image"
     t.datetime "created_at", null: false
