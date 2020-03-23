@@ -2,9 +2,9 @@
   .header__name
     = link_to "Restaurant　reviews", root_path, class: 'header__title' 
   .search
-    = form_with(url: posts_searches_path, local: true, method: :get, class: "searc") do |form|
-      = form.text_field :keyword, placeholder: "投稿を検索する", class: "text-field"
-      = form.submit "検索", class: "submit"
+    = form_with(url: posts_searches_path, local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+      = form.submit "検索", class: "search-btn"
 
     -#   %input.text-field{type: "text"}/
     -#   %button.submit{type: "submit"} 

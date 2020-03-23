@@ -16,9 +16,9 @@
       .header__posts__right
         = link_to "ログイン", new_user_session_path, class: 'post'
         = link_to "新規登録", new_user_registration_path, class: 'post'
-.container
-  .container__left
-    = image_tag @post.image.url, class: "image-show"
+.contents.row
+  .content_post
+    = image_tag @post.image.url
     .more
     - if user_signed_in? && current_user.id == @post.user_id
       %span= image_tag 'arrow_top.png'
@@ -29,25 +29,18 @@
           = link_to '削除', post_path(@post.id), method: :delete
     .name
       %span.name
-        %a{href: "/users/#{@post.user.id}"}
+        %a{:href => "/users/#{@post.user.id}"}
           %span 投稿者
           = @post.user.nickname
     .title
-      %span Title：
       = @post.title
-    .genre
-      %span Genre:
-      = @post.genre
     .where
-      %span Place:
       = @post.where
     .word
-      %span A word:
       = @post.word
-    .time
-      .time__text
-      = @post.created_at.to_s(:datetime_jp)
-  .container__right
-    .review-show
+    .review
       = safe_join(@post.review.split("\n"),tag(:br))
+    
+
+   
 

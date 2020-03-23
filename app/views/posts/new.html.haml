@@ -16,7 +16,8 @@
       .header__posts__right
         = link_to "ログイン", new_user_session_path, class: 'post'
         = link_to "新規登録", new_user_registration_path, class: 'post'
-.contents-form.row
+.contents.row
   .container
     = form_with(model: @post, local: true) do |form|
+      %h3投稿する
       = render partial: "form", locals: { form: form }
