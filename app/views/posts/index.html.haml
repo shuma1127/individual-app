@@ -21,7 +21,7 @@
     - @posts.each do |post|
       .content__box
         .name
-          %a{href: "/users/#{post.user.id}"}
+          %a{:href => "/users/#{post.user.id}"}
             %span 投稿者
             = post.user.nickname
         .title
@@ -37,27 +37,17 @@
           = post.created_at.to_s(:datetime_jp)
         %ul.more
           %li= link_to '詳細', "/posts/#{post.id}", method: :get
-        - if user_signed_in? && current_user.id == post.user_id
-          %li= link_to icon('fas', 'times-circle', class: 'icon'), "/posts/#{post.id}", method: :delete
-          %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get 
+          - if user_signed_in? && current_user.id == post.user_id
+            %li= link_to icon('fas', 'times-circle', class: 'icon'), "/posts/#{post.id}", method: :delete
+            %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get 
         .image
           - if post.image.present?  
             = image_tag post.image.url, class: 'image-post'
-  -# .page
-  -#   = paginate(@posts)
-  .nav-links
-    %a.prev.page-numbers{:href => "https://techacademy.jp/magazine/category/webdesign/"} «
-    / 現在の前のページへのリンク
-    %a.page-numbers{:href => "https://techacademy.jp/magazine/category/webdesign/"} 1
-    %span.page-numbers.current 2
-    / 現在閲覧しているページ
-    %a.page-numbers{:href => "https://techacademy.jp/magazine/category/webdesign/page/3"} 3
-    %span.page-numbers.dots …
-    %a.page-numbers{:href => "https://techacademy.jp/magazine/category/webdesign/page/27"} 27
-    %a.next.page-numbers{:href => "https://techacademy.jp/magazine/category/webdesign/page/3"} »
-    / 現在の次のページへのリンク
-
+  .page
+    = paginate(@posts)
 .footer
+  .footer__text
+
 
 
 
