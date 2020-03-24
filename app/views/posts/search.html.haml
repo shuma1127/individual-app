@@ -11,15 +11,15 @@
     - @posts.each do |post|
       .content__box
         .name
-          %a{:href => "/users/#{post.user.id}"}
+          %a{href: "/users/#{post.user.id}"}
             %span 投稿者
             = post.user.nickname
         .title
           %span Title：
           = post.title
-        .where
+        .place
           %span Place:
-          = post.where
+          = post.place
         .word
           %span A word:
           = post.word
@@ -33,5 +33,7 @@
         .image
           - if post.image.present?  
             = image_tag post.image.url, class: 'image-post'
+  -# .page
+  -#   = paginate(@posts)
 .footer
   .footer__text

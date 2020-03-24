@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_03_20_073438) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "where"
+    t.string "place"
     t.string "word"
     t.string "title"
     t.string "genre"
