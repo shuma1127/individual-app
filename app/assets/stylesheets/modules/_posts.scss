@@ -9,14 +9,14 @@
   left: 0;
   right: 0;
   padding: 0 20px 0 80px;
-  background-color: #fafafa;
-  height: 80px;
+  background-color: #FD9933;
+  height: 90px;
   display: flex;
-  line-height: 80px;
+  line-height: 90px;
   position: relative;
   &__name {
     width: 30%;
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 900;
     color: #333;
     font-family: 'Corben', cursive;
@@ -60,7 +60,7 @@
 .contents {
   height: calc(100vh - 30px);
   padding: 30px 20px 20px;
-  // background-color :green;
+  // background-color :#FD9933;
   overflow: scroll;
   .content {
     flex-wrap: wrap;
@@ -93,6 +93,6 @@
   
 
 .footer {
-  background-color: gray;
+  background-color: #FD9933;
   height: 30px;
 } 
