@@ -8,7 +8,7 @@
         %h2 Create Account
         = render "devise/shared/links"
       .account-page__inner--right.user-form
-        = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
           .field
             .filed-name
@@ -22,7 +22,7 @@
           .field
             .field-label
               = f.label :password
-              %i (英数字8文字以上)
+              %i (6 characters or more)
             .field-input
               = f.password_field :password, autocomplete: "off"
           .field
