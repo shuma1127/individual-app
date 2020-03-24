@@ -10,14 +10,15 @@
     width: 100%;
     .account-page__inner {
       width: 980px;
-      margin: 0 auto; 
       padding: 30px;
+      margin-left: 100px;
       border-radius: 5px;
       overflow: scroll;
 
       .account-page__inner--left, .account-page__inner--right {
         float: left;
         width: 50%;
+        padding-left: 30px;
       }
       &:after {
         clear: both;
