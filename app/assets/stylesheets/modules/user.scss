@@ -4,7 +4,8 @@
   height: calc(100vh - 90px);
   padding: 30px 50px;
   background-image: url(//imgcc.naver.jp/kaze/mission/USER/20140714/57/5298387/27/750x600x530c15e36e663808c2ba5570.jpg);
-  
+  background-position: center;
+  background-size: 100%;
   .account-page {
     height: 100%;
     width: 100%;
@@ -34,7 +35,8 @@
         letter-spacing: 3px;
         font-size: 50px;
         font-weight: 200;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+        
 
         // &:after {
         //   content: '';
@@ -158,10 +160,10 @@
     }
   }
 }
-.footer-log {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: black;
-  height: 50px;
-}
+// .footer-log {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   background-color: black;
+//   height: 50px;
+// }
