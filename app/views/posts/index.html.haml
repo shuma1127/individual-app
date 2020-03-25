@@ -48,7 +48,7 @@
             %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get 
         .image
           - if post.image.present?  
-            = image_tag post.image.url, class: 'image-post'
+            = image_tag post.image.url, class: 'image__post'
   .page
     = paginate(@posts)
 .footer
