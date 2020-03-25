@@ -1,23 +1,4 @@
-.header-user {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 0 20px 0 80px;
-  background-color: #fafafa;
-  height: 90px;
-  display: flex;
-  line-height: 80px;
-  position: relative;
-  &__name {
-    width: 600px;
-    font-size: 60px;
-    font-weight: 900;
-    color: #333;
-    font-family: 'Corben', cursive;
-  }
-}
+
 .container {
   height: calc(100vh - 140px);
   margin: 30px 40px 30px 80px;
