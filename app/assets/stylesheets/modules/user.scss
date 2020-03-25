@@ -1,9 +1,28 @@
-
-
+.header-user {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 20px 0 80px;
+  background-color: #fafafa;
+  height: 90px;
+  display: flex;
+  line-height: 80px;
+  position: relative;
+  &__name {
+    width: 600px;
+    font-size: 60px;
+    font-weight: 900;
+    color: #333;
+    font-family: 'Corben', cursive;
+  }
+}
 .account {
   height: calc(100vh - 90px);
   padding: 30px 50px;
-  background-image: url(//imgcc.naver.jp/kaze/mission/USER/20140714/57/5298387/27/750x600x530c15e36e663808c2ba5570.jpg);
+  background-image: url(
+    https://rimage.gnst.jp/gurutabi.gnavi.co.jp/image/public/img/article/12/d6/art002203/article_art002203_17.jpg?20180404161900&rw=600);
   background-position: center;
   background-size: 100%;
   .account-page {
