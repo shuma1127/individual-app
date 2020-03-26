@@ -70,4 +70,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
 gem 'kaminari'
+gem "jquery-rails"
 

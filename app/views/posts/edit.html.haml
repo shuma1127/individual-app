@@ -1,11 +1,6 @@
 .header
   .header__name
     = link_to "Restaurant　reviews", root_path, class: 'header__title' 
-  .search
-    -# %form
-    -#   %input.text-field{type: "text"}/
-    -#   %button.submit{type: "submit"} 
-    -#     %i.fas.fa-search-location
   .header__posts
     - if user_signed_in?
       .header__posts__right

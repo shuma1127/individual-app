@@ -76,7 +76,7 @@
 
     .field {
       margin-bottom: 10px;
-      color:khaki;
+      color:black;
       font-size: 20px;
       .field-name {
         padding: 10px;
@@ -90,7 +90,7 @@
 
         i {
           font-size: 15px;
-          color: white;
+          color:black;
         }
       }
 
@@ -113,13 +113,13 @@
       text-align: center;
       border: none;
       border-radius: 2px;
-      border: 1px solid khaki;
+      border: 1px solid black;
     }
 
     input[type='submit'] {
       float: left;
       margin-top: 20px;
-      color: khaki;
+      color: white;
       background-color: black;
     }
 
