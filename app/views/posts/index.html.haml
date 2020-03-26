@@ -47,8 +47,12 @@
             %li= link_to icon('fas', 'times-circle', class: 'icon'), "/posts/#{post.id}", method: :delete
             %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get 
         .image
-          - if post.image.present?  
-            = image_tag post.image.url, class: 'image__post'
+          - if post.image 
+            =  link_to post.image.url, 'data-lightbox': post.image do 
+              = image_tag post.image.url if post.image? 
+
+
+
   .page
     = paginate(@posts)
 .footer
