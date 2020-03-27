@@ -44,5 +44,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  process resize_to_fit: [318,300]
+  include CarrierWave::MiniMagick
+  version :thumb do
+    process resize_to_fill: [300,200]
+  end
 end

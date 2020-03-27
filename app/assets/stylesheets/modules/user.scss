@@ -1,23 +1,4 @@
-.header-user {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 0 20px 0 80px;
-  background-color: #fafafa;
-  height: 90px;
-  display: flex;
-  line-height: 80px;
-  position: relative;
-  &__name {
-    width: 600px;
-    font-size: 60px;
-    font-weight: 900;
-    color: #333;
-    font-family: 'Corben', cursive;
-  }
-}
+
 .account {
   height: calc(100vh - 90px);
   padding: 30px 50px;
@@ -32,10 +13,8 @@
       padding: 30px;
       margin-left: 100px;
       border-radius: 5px;
-      overflow: scroll;
 
       .account-page__inner--left, .account-page__inner--right {
-        float: left;
         width: 50%;
         padding-left: 30px;
       }
@@ -48,6 +27,7 @@
 
     .account-page__header {
       h2 {
+        text-shadow: -1px -1px 1px #ffffff, 1px 1px #000000;
         color: white;
         margin-bottom: 10px;
         letter-spacing: 3px;
@@ -67,40 +47,33 @@
 
       .btn {
         margin-top: 20px;
+        margin: 20px 0px 40px 0px;
         color: #fff;
         background-color: #ccc;
-        font-size: 14px;
+        font-size: 30px;
+        box-shadow: 0 4px 0 0px gray;
+        border-radius:  5px; 
+        text-decoration: none;
+        float: left;
       }
     }
 
     .field {
       margin-bottom: 10px;
-      color:black;
       font-size: 20px;
-      .field-name {
-        padding: 10px;
-      }
-
-      .field-label {
-        padding: 8px 0;
-        letter-spacing: 1px;
-        font-size: 14px;
-        font-weight: 200;
-
-        i {
-          font-size: 15px;
-          color:black;
+      &__input {
+        padding: 10px 0px;
+        .email {
+          width: 400px;
+          height: 50px;
+        }
+        .password {
+          width: 400px;
+          height: 50px;
         }
       }
-
-      .field-input {
-        input {
-          width: 100%;
-          padding: 10px;
-          letter-spacing: 1px;
-        }
-      }
-    }
+     }
+   
 
     .btn {
       display: inline-block;
@@ -112,15 +85,16 @@
       text-align: center;
       border: none;
       border-radius: 2px;
-      border: 1px solid black;
     }
 
     input[type='submit'] {
       float: left;
       margin-top: 20px;
-      color: white;
-      background-color: black;
+      background-color: #ccc;
+      box-shadow: 0 4px 0 0px gray;
+      border-radius:  5px;
     }
+  }
 
     .field-label {
       .field_with_errors {
@@ -133,7 +107,7 @@
     .field-input {
       .field_with_errors {
         position: relative;
-
+        
         &:after {
           content: '';
           display: block;
@@ -146,12 +120,12 @@
         }
       }
     }
-  }
+  
 
   #error_explanation {
     position: absolute;
-    left: 80px;
-    bottom: 120px;
+    bottom: 150px;
+    right: 200px;
     margin: 20px 0;
     padding: 20px 30px;
     border: 2px solid #ddd;
