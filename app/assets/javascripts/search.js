@@ -1,7 +1,7 @@
 $(function() {
   var search_list = $(".content");
 
-  function appendpost(post) {
+  function appendPost(post) {
     if(post.user_sign_in && post.user_sign_in.id == post.user_id){
       var current_user = `<li>
                             <a href="/posts/${post.id}/edit" data-method="get" >編集</a>
@@ -13,23 +13,27 @@ $(function() {
       var current_user = ""
     }
 
-    var html = `<div class="content_box" style="background-image: url(${post.image});">
-                  <div class="more">
-                    <span><img src="/assets/arrow_top.png"></span>
-                    <ul class="more_list">
-                      <li>
-                        <a href="/posts/${post.id}" data-method="get" >詳細</a>
-                      </li>
-                      ${current_user}
-                    </ul>
-                  </div>
-                  <p>${post.title}</p><br>
-                  <span class="name">
-                    <a href="/users/${post.user_id}">
-                      <span>投稿者</span>${post.nickname}
+    var html = `
+                <div class="content__box">
+                  <div class="name">
+                    <a href="/users/${post.user_id}"
+                    <span>投稿者:</span>
+                    ${post.nickname}
                     </a>
-                  </span>
-                </div>`
+                  <div class="title">
+                    <span>Title：</span>
+                    ${post.title}
+                  </div>
+                  <div class="place">
+                    <span>Place：</span>
+                    ${post.place}
+                  <div class="A word">
+                    <span>A word</span>
+                    ${post.word}
+                  <image>
+                    <img src=${post.image.url}>
+                  </image_tag>`
+
     search_list.append(html);
   }
 
@@ -37,20 +41,20 @@ $(function() {
     var html = `<div class='name'>${ msg }</div>`
     search_list.append(html);
   }
+  
   $(".text-field").on("keyup", function() {
     var input = $(".text-field").val();
-    console.log(input);
     $.ajax({
       type: 'GET',
       url: '/posts/search',
       data: { keyword: input },
       dataType: 'json'
     })
-    .done(function(posts) {
+    .done(function(posts){
       search_list.empty();
       if (posts.length !== 0) {
         posts.forEach(function(post){
-          appendpost(post);
+          appendPost(post);
         });
       }
       else {
