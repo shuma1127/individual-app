@@ -16,7 +16,7 @@ $(function() {
     var html = `
                 <div class="content__box">
                   <div class="name">
-                    <a href="/users/${post.user_id}"
+                    <a href="/users/${post.user_id}">
                     <span>投稿者:</span>
                     ${post.nickname}
                     </a>
@@ -30,10 +30,13 @@ $(function() {
                   <div class="A word">
                     <span>A word</span>
                     ${post.word}
+                  <div class="more">
+                    <a href="/posts/${post.id}">詳細</a>
+                  </div>
                   <image>
                     <img src=${post.image.url}>
                   </image_tag>`
-
+                    
     search_list.append(html);
   }
 
