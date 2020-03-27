@@ -1,8 +1,8 @@
-.header-user
-  .header-user__name
+.header
+  .header__name
     Restaurant　reviews
 .account
-  #account-page.account-page
+  .account-page#account-page
     .account-page__inner.clearfix
       .account-page__inner--left.account-page__header
         %h2 Log in
@@ -10,16 +10,10 @@
       .account-page__inner--right.user-form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
-            .field-label
-              = f.label :email
-            .field-input
-              = f.email_field :email, autofocus: true
-            .field
-              .field-label
-                = f.label :password
-                %i (6 characters or more)
-              .field-input
-                = f.password_field :password, autocomplete: "off"
+            .field__input
+              = f.email_field :email, placeholder: "Email", autofocus: true, class: "email"
+            .field__input
+              = f.password_field :password, placeholder: "password", autocomplete: "off",class: "password"
             .actions
               = f.submit "Log in", class: 'btn'
 .footer-log

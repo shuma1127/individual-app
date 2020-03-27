@@ -1,5 +1,5 @@
-.header-user
-  .header-user__name
+.header
+  .header__name
     Restaurant　reviews
 .account
   #account-page.account-page
@@ -11,25 +11,14 @@
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
           .field
-            .filed-name
-              = f.label :nickname
-              %br= f.text_field :nickname, autofocus: true
-          .field
-            .field-label
-              = f.label :email
-            .field-input
-              = f.email_field :email
-          .field
-            .field-label
-              = f.label :password
-              %i (6 characters or more)
-            .field-input
-              = f.password_field :password, autocomplete: "off"
-          .field
-            .field-label
-              = f.label :password_confirmation
-            .field-input
-              = f.password_field :password_confirmation, autocomplete: "off"
+            .field__input
+              = f.text_field :nickname, placeholder: "Nickname", autofocus: true, class: "nickname"
+            .field__input
+              = f.email_field :email, placeholder: "Email",  class: "email"
+            .field__input
+              = f.password_field :password, placeholder: "password", autocomplete: "off", class: "password"
+            .field__input
+              = f.password_field :password_confirmation, placeholder: "password_confirmation", autocomplete: "off",class: "password" 
           .actions
             = f.submit "Create Account", class: 'btn'
 .footer-log
