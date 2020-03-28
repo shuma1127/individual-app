@@ -13,7 +13,7 @@ $(function() {
       var current_user = ""
     }
 
-    var html = `
+    var html = `<div class= "content">
                 <div class="content__box">
                   <div class="name">
                     <a href="/users/${post.user_id}">
@@ -35,7 +35,8 @@ $(function() {
                   </div>
                   <image>
                     <img src=${post.image.url}>
-                  </image_tag>`
+                  </image_tag>
+                <div class= content>`
                     
     search_list.append(html);
   }
