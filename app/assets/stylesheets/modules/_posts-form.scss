@@ -34,13 +34,17 @@
           width: 300px;
         }
       }
-      .image {
+      .image-form {
         padding: 10px 0px;
+        text-decoration:none;
+        &__text {
+        }
       }
       .submit {
         padding: 10px 0px;
+        height: 300px;
         &__btn {
-          font-size: 40px;
+          width: 50px;
         }
       }
       .time {
@@ -56,16 +60,16 @@
     float: left;
     .review {
       &__text {
-        width: 95%;
-        height: 550px;
+        width: 90%;
+        height: 500px;
       }
     }
     .review-show {
       margin: 0 auto;
       overflow: scroll;
       border: 1px solid black;
-      height: 550px;
-      width: 100%;
+      height: 500px;
+      width: 90%;
     }
     
   }

@@ -14,6 +14,7 @@
   display: flex;
   line-height: 90px;
   position: relative;
+  border: 1px solid black;
   &__name {
     width: 30%;
     font-size: 45px;
@@ -49,13 +50,57 @@
       }
   }
   &__posts {
-    display: flex;
     // width: 50%;
     position: absolute;
     right: 20px;
     .right {
-      padding: 0 60px 0 60px;
-      
+      padding: 0 20px 0 60px;
+      display: flex;
+      a {
+        text-decoration: none;
+        font-size: 20px;
+      }
+      .mypage{
+        &__name {
+          padding: 0.5em 1em;
+          text-decoration: none;
+          background:#9999;
+          color:black;
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+          border-bottom: solid 3px #627295;
+          border-radius: 3px;
+          font-weight: bold;
+          text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
+        }
+      }
+      .post {
+        padding: 0 20px 0 30px;
+        &__new {
+          padding: 0.5em 1em;
+          text-decoration: none;
+          background:#FFCC33;
+          color:#FFCC33;
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+          border-bottom: solid 3px #627295;
+          border-radius: 3px;
+          font-weight: bold;
+          text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
+        }
+      }
+      .log {
+        &__out{
+          padding: 0.5em 1em;
+          text-decoration: none;
+          background:crimson;
+          color:crimson;
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+          border-bottom: solid 3px #627295;
+          border-radius: 3px;
+          font-weight: bold;
+          text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
+        }
+      }
+
     }
   }
 }
@@ -71,23 +116,50 @@
     flex-wrap: wrap;
     display: flex;
     &__box {
+      width: 300px;
       border: 1px solid black;
-      margin: 10px 15px 10px 15px;
+      margin: 10px 25px 10px;
       a {
-        text-decoration: none;
+        text-decoration: none; 
+        color: black;
+        font-weight: bold;
+      }  
+      .name {
+        background-color: #993333;
       }
-    .name {
-      background-color: black;
-      
-    }
-
-    .more {
-      display: flex;
-      justify-content: space-between;
-      width: 30%;
-    }
-    .image {
-      bottom: 0px;
+      .title {
+        background-color: #993333;
+        color: white;
+        font-size: 20px;
+      }
+      .place{
+        font-size: 15px;
+      }
+      .word {
+        font-size: 15px;
+      }
+      .time {
+        font-size: 15px;
+      }
+      .more {
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
+        .show-btn {
+          background-color: slategray;
+          border:1px solid slategray;
+          color: white;
+          border-radius:  5px; 
+          box-shadow: 0 4px 0 0px gray;
+        }
+        .destroy-btn{
+          color: red;
+        }
+        .edit-btn {
+          color: royalblue;
+        }
+      }
+      .image {
       }
     }
   }
@@ -103,6 +175,6 @@
   
 
 .footer {
-  background-color:#EEEEEE;
+  background-color: #EEEEEE;
   height: 30px;
 } 
