@@ -13,13 +13,16 @@ $(function() {
       var current_user = ""
     }
 
-    var html = `<div class= "content">
+    var html = `
+            <div class contents>
+              <div class= "content">
                 <div class="content__box">
                   <div class="name">
                     <a href="/users/${post.user_id}">
                     <span>投稿者:</span>
                     ${post.nickname}
                     </a>
+                  </div>
                   <div class="title">
                     <span>Title：</span>
                     ${post.title}
@@ -27,16 +30,20 @@ $(function() {
                   <div class="place">
                     <span>Place：</span>
                     ${post.place}
+                  </div>
                   <div class="A word">
                     <span>A word</span>
                     ${post.word}
+                  </div>
                   <div class="more">
                     <a href="/posts/${post.id}">詳細</a>
                   </div>
-                  <image>
+                  <div class="image">
                     <img src=${post.image.url}>
-                  </image_tag>
-                <div class= content>`
+                  </div>
+                </div>
+              </div>
+            </div>`
                     
     search_list.append(html);
   }
