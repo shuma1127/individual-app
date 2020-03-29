@@ -1,9 +1,23 @@
-
-.account {
-  height: calc(100vh - 90px);
-  padding: 30px 50px;
-  background-image: url("article.jpg");
+.bg-slider {
   
+  background-position:center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg-slider__title{
+  color: #fff;
+  font-size: 48px;
+  line-height: 1.5;
+  font-weight: bold;
+  text-align:center;
+  text-shadow: 1px 1px 1px #000;
+}
+.account {
+  width: 100vw;
+  height: calc(100vh - 90px);
+  // padding: 30px 50px;
   background-position: center;
   background-size: 100%;
   .account-page {
