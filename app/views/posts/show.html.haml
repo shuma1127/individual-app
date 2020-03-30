@@ -29,9 +29,9 @@
       %span= image_tag 'arrow_top.png'
       %ul.more_list
         %li
-          = link_to '編集', edit_post_path(@post.id), method: :get
+          = link_to '編集', edit_post_path(@post.id), method: :get, class: "more_list__left"
         %li
-          = link_to '削除', post_path(@post.id), method: :delete
+          = link_to '削除', post_path(@post.id), method: :delete, class: "more_list__raight"
     .name
       %span.name
         %a{href: "/users/#{@post.user.id}"}

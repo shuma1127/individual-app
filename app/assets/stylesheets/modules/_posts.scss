@@ -178,3 +178,32 @@
   background-color: #EEEEEE;
   height: 30px;
 } 
+
+.container__left {
+  .more_list {
+    display: flex;
+    padding-bottom: 30px;
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      border: 1px solid #333;
+      color: white;
+      font-weight: bold;
+    }
+    &__left {
+      margin-right: 30px;
+      background-color: royalblue;
+      
+    }
+    &__raight {
+      background-color: red;
+      
+    }
+   }
+  .name {
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
