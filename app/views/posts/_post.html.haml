@@ -1,0 +1,27 @@
+.content
+  - @posts.each do |post|
+    .content__box
+      .name
+        %a{href: "/users/#{post.user.id}"}
+          %span 投稿者:
+          = post.user.nickname
+      .title
+        %span Title：
+        = post.title
+      .place
+        %span Place:
+        = post.place
+      .word
+        %span A word:
+        = post.word
+      .time
+        = post.created_at.to_s(:datetime_jp)
+      %ul.more
+        %li= link_to '詳細', "/posts/#{post.id}", method: :get, class: "show-btn"
+        - if user_signed_in? && current_user.id == post.user_id
+          %li= link_to icon('fas', 'times-circle', class: 'icon'), "/posts/#{post.id}", method: :delete, class: "destroy-btn"
+          %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get, class: "edit-btn"
+      .image
+        - if post.image 
+          =  link_to post.image.url, 'data-lightbox': post.image do 
+            = image_tag post.image.url, class: "image__post"
