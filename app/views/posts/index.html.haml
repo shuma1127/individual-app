@@ -1,60 +1,8 @@
 .header
-  .header__name
-    = link_to "Restaurant　reviews", root_path, class: 'header__title' 
-  .search
-    = form_with(url: search_posts_path, local: true, method: :get) do |form|
-      = form.text_field :keyword, placeholder: "投稿を検索する", class: "text-field"
-      = button_tag type: 'submit', class: "submit" do
-        = icon('fas', 'search')
-
-  .header__posts
-    .right
-      - if user_signed_in?
-        .mypage
-          = link_to current_user.nickname, user_path(current_user), class: "mypage__name"
-        .post
-          = link_to "新規投稿", new_post_path, class: "post__new"
-        .log
-          = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "log__out"
-      - else
-        .header__posts__right
-          = link_to "ログイン", new_user_session_path, class: 'right__log'
-          = link_to "新規登録", new_user_registration_path, class: 'right__post'
+  = render "header"
 .contents
-  .content
-    - @posts.each do |post|
-      .content__box
-        .name
-          %a{:href => "/users/#{post.user.id}"}
-            %span 投稿者:
-            = post.user.nickname
-        .title
-          %span Title：
-          = post.title
-        .place
-          %span Place:
-          = post.place
-        .word
-          %span A word:
-          = post.word
-        .time
-          = post.created_at.to_s(:datetime_jp)
-        %ul.more
-          %li= link_to '詳細', "/posts/#{post.id}", method: :get, class: "show-btn"
-          - if user_signed_in? && current_user.id == post.user_id
-            %li= link_to icon('fas', 'times-circle', class: 'icon'), "/posts/#{post.id}", method: :delete, class: "destroy-btn"
-            %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get, class: "edit-btn"
-        .image
-          - if post.image 
-            =  link_to post.image.url, 'data-lightbox': post.image do 
-              = image_tag post.image.url if post.image?
-
-          -# %a{"data-lightbox" => "sample", "data-title" => "サンプル画像01", :href => "common/images/photo01.jpg"}
-          -# %img{:alt => "", :src => "post.image.url"}/
-
-
-
-
+  = render "post"
+      
   .page
     = paginate(@posts)
 .footer

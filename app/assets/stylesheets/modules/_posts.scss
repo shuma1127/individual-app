@@ -160,6 +160,10 @@
         }
       }
       .image {
+        &__post {
+          height: 200px;
+          width: 298px;
+        }
       }
     }
   }
