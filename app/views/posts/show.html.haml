@@ -14,9 +14,7 @@
           = link_to '削除', post_path(@post.id), method: :delete, class: "more_list__raight"
     .name
       %span.name
-        %a{href: "/users/#{@post.user.id}"}
-          %span 投稿者
-          = @post.user.nickname
+        = link_to @post.user.nickname, user_path(@post.user.id), class: "aiueo"
     .title
       %span Title：
       = @post.title
