@@ -18,12 +18,10 @@
       %ul.more
         %li= link_to '詳細', post_path(post.id), method: :get, class: "show-btn"
         - if user_signed_in? && current_user.id == post.user_id
-          %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get, class: "edit-btn"
           %li= link_to icon('fas', 'times-circle', class: 'icon'), post_path(post.id), method: :delete, class: "destroy-btn"
           %li= link_to icon('fas', 'edit', class: 'edit'), edit_post_path(post.id), method: :get, class: "edit-btn"
           %li
             = render partial: "posts/bookmark"
-
       .image
         - if post.image 
           =  link_to post.image.url, 'data-lightbox': post.image do 
