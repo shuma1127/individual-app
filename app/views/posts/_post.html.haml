@@ -21,7 +21,11 @@
           %li= link_to icon('fas', 'times-circle', class: 'icon'), post_path(post.id), method: :delete, class: "destroy-btn"
           %li= link_to icon('fas', 'edit', class: 'edit'), edit_post_path(post.id), method: :get, class: "edit-btn"
           %li
-            = render partial: "posts/bookmark"
+            - if !Bookmark.exists?(user_id:current_user.id,post_id:post.id)
+              = link_to icon('fas', 'book-open'), bookmarks_path(post_id: post.id),method: :post
+            - else
+              = link_to icon('fas', 'book'), bookmark_path(post.id),method: :delete
+
       .image
         - if post.image 
           =  link_to post.image.url, 'data-lightbox': post.image do 
