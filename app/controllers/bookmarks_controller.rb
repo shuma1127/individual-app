@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
     if Bookmark.create(user_id: current_user.id,post_id: params[:post_id])
       redirect_to root_path
     else
-      redirect_to root_path
+      flash.now[:alert] = "ブックマークに失敗しました。"
     end
   end
 
@@ -13,7 +13,7 @@ class BookmarksController < ApplicationController
       bookmark.delete
       redirect_to root_path
     else
-      redirect_to root_path
+      flash.now[:alert] = "予期せぬエラーが発生しました。"
     end
   end
 

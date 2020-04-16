@@ -2,9 +2,8 @@
   - @posts.each do |post|
     .content__box
       .name
-        %a{href: "/users/#{post.user.id}"}
-          %span 投稿者:
-          = post.user.nickname
+        %span 投稿者：
+        = link_to post.user.nickname, user_path(post.user.id)
       .title
         %span Title：
         = post.title
@@ -17,13 +16,12 @@
       .time
         = post.created_at.to_s(:datetime_jp)
       %ul.more
-        %li= link_to '詳細', "/posts/#{post.id}", method: :get, class: "show-btn"
+        %li= link_to '詳細', post_path(post.id), method: :get, class: "show-btn"
         - if user_signed_in? && current_user.id == post.user_id
-          %li= link_to icon('fas', 'times-circle', class: 'icon'), "/posts/#{post.id}", method: :delete, class: "destroy-btn"
-          %li= link_to icon('fas', 'edit', class: 'edit'), "/posts/#{post.id}/edit", method: :get, class: "edit-btn"
+          %li= link_to icon('fas', 'times-circle', class: 'icon'), post_path(post.id), method: :delete, class: "destroy-btn"
+          %li= link_to icon('fas', 'edit', class: 'edit'), edit_post_path(post.id), method: :get, class: "edit-btn"
           %li
-            = render "bookmark"
-
+            = render partial: "posts/bookmark"
       .image
         - if post.image 
           =  link_to post.image.url, 'data-lightbox': post.image do 
