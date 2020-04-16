@@ -1,6 +1,4 @@
-- @posts.each do |post|
-  - if !Bookmark.exists?(user_id:current_user.id,post_id:post.id)
-    = link_to icon('fas', 'book-open'), bookmarks_path(post_id: post.id),method: :post
-  - else
-    = link_to icon('fas', 'book'), bookmark_path(post.id),method: :delete
-
+- if !Bookmark.exists?(user_id:current_user.id,post_id:post.id)
+  = link_to icon('fas', 'book-open'), bookmarks_path(post_id: post.id),method: :post
+- else
+  = link_to icon('fas', 'book'), bookmark_path(post.id),method: :delete
