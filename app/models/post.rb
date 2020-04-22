@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   validates :image, :title, presence: true
   mount_uploader :image, ImageUploader
   belongs_to :user
+
   has_many :bookmarks
   has_many :users, through: :bookmarks
 

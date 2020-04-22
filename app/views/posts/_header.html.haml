@@ -8,18 +8,20 @@
 .header__posts
   .right
     #nav-drawer
-      %input#nav-input.nav-unshown{type: "checkbox"}/
+      %input#nav-input.nav-unshown{type: "checkbox",}/
       %label#nav-open{for: "nav-input"}
         %span
       %label#nav-close.nav-unshown{for:"nav-input"}
       #nav-content 
         - if user_signed_in?
           .mypage
-            = link_to current_user.nickname, user_path(current_user), class: "mypage__name"
+            = link_to "マイページ", user_path(current_user), class: "mypage__btn"
           .post
-            = link_to "新規投稿", new_post_path, class: "post__new"
+            = link_to "新規投稿", new_post_path, class: "post__btn"
+          .bookmark
+            = link_to icon('fas', 'book') + "ブック一覧", bookmarks_path, class:"bookmark__btn"
           .log
-            = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "log__out"
+            = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "log__btn"
         - else
           .header__posts__right
             = link_to "ログイン", new_user_session_path, class: 'right__log'

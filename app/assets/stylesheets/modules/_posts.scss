@@ -16,8 +16,7 @@
   position: relative;
   border: 1px solid black;
   &__name {
-    width: 30%;
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 900;
     color: #333;
     text-shadow: -1px -1px 1px #ffffff, 1px 1px #000000;
@@ -28,7 +27,7 @@
     color: black;
   }
   .search {
-    padding: 25px 0px 0px 40px;
+    padding: 30px 0px 0px 350px;
     .text-field {
       float: left;
       height: 35px;
@@ -50,22 +49,23 @@
       }
   }
   &__posts {
-    // width: 50%;
     position: absolute;
-    right: 20px;
+    right: 50px;
     .right {
-      padding: 0 20px 0 60px;
       display: flex;
       a {
         text-decoration: none;
         font-size: 20px;
       }
       .mypage{
-        &__name {
+        background-color: #EEEEEE;
+        width: 100%;
+        &__btn {
+          display: block;
           padding: 0.5em 1em;
           text-decoration: none;
           background:#9999;
-          color:black;
+          color:#9999;
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
           border-bottom: solid 3px #627295;
           border-radius: 3px;
@@ -74,8 +74,10 @@
         }
       }
       .post {
-        padding: 0 20px 0 30px;
-        &__new {
+        background-color: #EEEEEE	;
+        width: 100%;
+        &__btn {
+          display: block;
           padding: 0.5em 1em;
           text-decoration: none;
           background:#FFCC33;
@@ -87,8 +89,24 @@
           text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
         }
       }
+      .bookmark {
+        &__btn{
+          display: block;
+          padding: 0.5em 1em;
+          text-decoration: none;
+          background: yellowgreen;
+          color: yellowgreen;
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+          border-bottom: solid 3px #627295;
+          border-radius: 3px;
+          font-weight: bold;
+          text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
+        }
+      }
       .log {
-        &__out{
+        background-color: #EEEEEE	;
+        &__btn{
+          display: block;
           padding: 0.5em 1em;
           text-decoration: none;
           background:crimson;
@@ -100,7 +118,6 @@
           text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
         }
       }
-
     }
   }
 }

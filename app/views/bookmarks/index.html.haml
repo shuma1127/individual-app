@@ -1,0 +1,65 @@
+.header
+  .header__name
+    = link_to "Restaurant　reviews", root_path, class: 'header__title' 
+  .search
+    = form_with(url: search_posts_path, local: true, method: :get) do |form|
+      = form.text_field :keyword, placeholder: "投稿を検索する", class: "text-field"
+      = button_tag type: 'submit', class: "submit" do
+        = icon('fas', 'search')
+  .header__posts
+    .right
+      #nav-drawer
+        %input#nav-input.nav-unshown{type: "checkbox",}/
+        %label#nav-open{for: "nav-input"}
+          %span
+        %label#nav-close.nav-unshown{for:"nav-input"}
+        #nav-content 
+          - if user_signed_in?
+            .mypage
+              = link_to "マイページ", user_path(current_user), class: "mypage__btn"
+            .post
+              = link_to "新規投稿", new_post_path, class: "post__btn"
+            .bookmark
+              = link_to "ブックマーク一覧", bookmarks_path, class:"bookmark__btn"
+            .log
+              = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "log__btn"
+          - else
+            .header__posts__right
+              = link_to "ログイン", new_user_session_path, class: 'right__log'
+              = link_to "新規登録", new_user_registration_path, class: 'right__post'
+.contents              
+  .content
+    - @bookmarks.each do |bookmark|
+      .content__box
+        .name
+          %span 投稿者：
+          = link_to bookmark.post.user.nickname, user_path(bookmark.post.user.id)
+        .title
+          %span Title：
+          = bookmark.post.title
+        .place
+          %span Place:
+          = bookmark.post.place
+        .word
+          %span A word:
+          = bookmark.post.word
+        .time
+          = bookmark.post.created_at.to_s(:datetime_jp)
+        %ul.more
+          %li= link_to '詳細', post_path(bookmark.post.id), method: :get, class: "show-btn"
+          - if user_signed_in? && current_user.id == bookmark.post.user_id
+            %li= link_to icon('fas', 'times-circle', class: 'icon'), post_path(bookmark.post.id), method: :delete, class: "destroy-btn"
+            %li= link_to icon('fas', 'edit', class: 'edit'), edit_post_path(bookmark.post.id), method: :get, class: "edit-btn"
+            %li
+              - if !Bookmark.exists?(user_id:current_user.id,post_id:bookmark.post.id)
+                = link_to icon('fas', 'book-open'), bookmarks_path(post_id: bookmark.post.id),method: :post
+              - else
+                = link_to icon('fas', 'book'), bookmark_path(bookmark.post.id),method: :delete
+        .image
+          - if bookmark.post.image 
+            =  link_to bookmark.post.image.url, 'data-lightbox': bookmark.post.image do 
+              = image_tag bookmark.post.image.url, class: "image__post"
+  -# .page
+  -#   = paginate(@posts)
+.footer
+  .footer__text
