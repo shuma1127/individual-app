@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true, uniqueness: true
-
   has_many :posts
+
   has_many :bookmarks
-  has_many :posts, through: :bookmarks
+  # has_many :posts, through: :bookmarks
 end

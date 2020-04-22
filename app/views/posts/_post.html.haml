@@ -17,15 +17,16 @@
         = post.created_at.to_s(:datetime_jp)
       %ul.more
         %li= link_to '詳細', post_path(post.id), method: :get, class: "show-btn"
+        %li
+          - if !Bookmark.exists?(user_id:current_user.id,post_id:post.id)
+            = link_to icon('fas', 'book-open'), bookmarks_path(post_id: post.id),method: :post
+          - else
+            = link_to icon('fas', 'book'), bookmark_path(post.id),method: :delete
+
         - if user_signed_in? && current_user.id == post.user_id
           %li= link_to icon('fas', 'times-circle', class: 'icon'), post_path(post.id), method: :delete, class: "destroy-btn"
           %li= link_to icon('fas', 'edit', class: 'edit'), edit_post_path(post.id), method: :get, class: "edit-btn"
-          %li
-            - if !Bookmark.exists?(user_id:current_user.id,post_id:post.id)
-              = link_to icon('fas', 'book-open'), bookmarks_path(post_id: post.id),method: :post
-            - else
-              = link_to icon('fas', 'book'), bookmark_path(post.id),method: :delete
-
+        
       .image
         - if post.image 
           =  link_to post.image.url, 'data-lightbox': post.image do 
