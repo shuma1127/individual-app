@@ -160,8 +160,7 @@
       }
       .more {
         display: flex;
-        justify-content: space-between;
-        width: 30%;
+        padding-bottom: 5px;
         .show-btn {
           background-color: slategray;
           border:1px solid slategray;
@@ -169,10 +168,16 @@
           border-radius:  5px; 
           box-shadow: 0 4px 0 0px gray;
         }
+        .bookmark-btn {
+          padding-left: 15px;
+          color: #9ACD33;
+        }
         .destroy-btn{
+          padding-left: 15px;
           color: red;
         }
         .edit-btn {
+          padding: 15px;
           color: royalblue;
         }
       }
@@ -218,7 +223,6 @@
     }
     &__raight {
       background-color: red;
-      
     }
    }
   .name {
