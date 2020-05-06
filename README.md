@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 
 # アプリ名
-indicidual-app
+individual-app
 
 # 概要
 レストランでの食べ歩きの記録
