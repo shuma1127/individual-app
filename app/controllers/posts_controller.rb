@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword])
+    @posts = Post.search(params[:keyword]).order("created_at DESC").page(params[:page]).per(12)
     respond_to do |format|
       format.html
       format.json
