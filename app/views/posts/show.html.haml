@@ -6,7 +6,8 @@
       = image_tag @post.image.url, class: "image-show"
     .more
     - if user_signed_in? && current_user.id == @post.user_id
-      %span= image_tag 'arrow_top.png'
+      -# %span
+      -#   = image_tag 'arrow_top.png'
       %ul.more_list
         %li
           = link_to '編集', edit_post_path(@post.id), method: :get, class: "more_list__left"
