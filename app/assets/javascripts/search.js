@@ -35,9 +35,6 @@ $(function() {
                     <span>A word</span>
                     ${post.word}
                   </div>
-                  <div class="more">
-                    <a href="/posts/${post.id}">詳細</a>
-                  </div>
                   <div class="image">
                     <img class="image__post" src=${post.image.url}>
                   </div>
