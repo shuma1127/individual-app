@@ -75,5 +75,3 @@ gem 'mini_racer', platforms: :ruby
 
 gem 'sqlite3', group: :development
 gem 'pg',  group: :production
-
-
