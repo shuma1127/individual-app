@@ -1,11 +1,13 @@
 class Post < ApplicationRecord
-  validates :image, :title, presence: true
-  mount_uploader :image, ImageUploader
+  validates :title, presence: true
   belongs_to :user
 
   has_many :bookmarks
   has_many :users, through: :bookmarks
   has_many :images
+  has_many :images, dependent: :destroy
+  
+  accepts_nested_attributes_for :images, allow_destroy: true
 
   def self.search(search)
     return Post.all unless search

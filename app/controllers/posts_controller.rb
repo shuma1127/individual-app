@@ -5,16 +5,21 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(12)
-    # @posts = Product.includes(:images).order("created_at DESC")
+    # @images = @product.images
   end
 
   def new
     @post = Post.new
+    @post.images.new
   end
 
   def create
     Post.create(post_params)
-    redirect_to root_path
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -45,7 +50,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:word, :image, :title, :genre, :review, :place).merge(user_id: current_user.id)
+    params.require(:post).permit(:word, :title, :genre, :review, :place, images_attributes: [:src]).merge(user_id: current_user.id)
   end
 
   def set_post

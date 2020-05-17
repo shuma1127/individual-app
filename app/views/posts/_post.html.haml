@@ -28,7 +28,10 @@
           %li= link_to icon('fas', 'edit', class: 'edit'), edit_post_path(post.id), method: :get, class: "edit-btn"
         
       .image
-        - if post.image 
-          =  link_to post.image.url, 'data-lightbox': post.image do 
-            = image_tag post.image.url, class: "image__post"
+        -# - if post.image
+        - post.images.each do |image|
+          = image_tag image.src.url
+
+          -# =  link_to post.image.url, 'data-lightbox': post.image do 
+          -#   = image_tag post.image.url, class: "image__post"
 

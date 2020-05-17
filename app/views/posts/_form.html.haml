@@ -10,7 +10,8 @@
       .word
         = form.text_field :word, class: "word__text", placeholder: "word"
       .image-form
-        = form.file_field :image, class: "image-form__text"
+        = form.fields_for :images do |i|
+          = i.file_field :src
       .submit
         = form.submit "SEND", class: "submit__btn"
     .container__right
