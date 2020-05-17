@@ -5,6 +5,7 @@ class Post < ApplicationRecord
 
   has_many :bookmarks
   has_many :users, through: :bookmarks
+  has_many :images
 
   def self.search(search)
     return Post.all unless search
