@@ -1,6 +1,4 @@
 .header
   = render "header"
 .contents-form.row
-  .container
-    = form_with(model: @post, local: true) do |form|
-      = render partial: "form", locals: { form: form }
+  = render partial: "form"

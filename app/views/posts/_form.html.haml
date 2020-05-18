@@ -1,16 +1,18 @@
-.container__left
-  .title
-    = form.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
-  .genre
-    = form.text_field :genre, class: "genre__text", placeholder: "genre"
-  .place
-    = form.text_field :place, class: "place__text", placeholder: "place"
-  .word
-    = form.text_field :word, class: "word__text", placeholder: "word"
-  .image-form
-    = form.file_field :image, class: "image-form__text"
-  .submit
-    = form.submit "SEND", class: "submit__btn"
-.container__right
-  .review
-    = form.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
+.container
+  = form_with(model: @post, local: true) do |f|
+    .container__left
+      .title
+        = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
+      .genre
+        = f.text_field :genre, class: "genre__text", placeholder: "genre"
+      .place
+        = f.text_field :place, class: "place__text", placeholder: "place"
+      .word
+        = f.text_field :word, class: "word__text", placeholder: "word"
+      .image-form
+        = f.file_field :image, class: "image-form__text"
+      .submit
+        = f.submit "SEND", class: "submit__btn"
+    .container__right
+      .review
+        = f.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
