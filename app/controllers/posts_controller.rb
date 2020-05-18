@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [:edit, :show]
+  before_action :set_post, only: [:edit, :show, :update]
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(12)
-    # @images = @product.images
+    # @images = @post.images
   end
 
   def new
@@ -32,9 +32,11 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-    redirect_to post_path(post.id)
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def show

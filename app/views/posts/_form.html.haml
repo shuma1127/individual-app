@@ -1,19 +1,30 @@
 .container
-  = form_with(model: @post, local: true) do |form|
+  = form_with(model: @post, local: true) do |f|
     .container__left
       .title
-        = form.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
+        = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
       .genre
-        = form.text_field :genre, class: "genre__text", placeholder: "genre"
+        = f.text_field :genre, class: "genre__text", placeholder: "genre"
       .place
-        = form.text_field :place, class: "place__text", placeholder: "place"
+        = f.text_field :place, class: "place__text", placeholder: "place"
       .word
-        = form.text_field :word, class: "word__text", placeholder: "word"
+        = f.text_field :word, class: "word__text", placeholder: "word"
       .image-form
-        = form.fields_for :images do |i|
-          = i.file_field :src
+        #image-box
+          = f.fields_for :images do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :src, class: 'js-file'
+              %br/
+              %span.js-remove 削除
+            - if @post.persisted?
+              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          - if @post.persisted?
+            .js-file_group{"data-index" => "#{@post.images.count}"}
+              = file_field_tag :src, name: "post[images_attributes][#{@post.images.count}][src]", class: 'js-file'
+              .js-remove 削除
+
       .submit
-        = form.submit "SEND", class: "submit__btn"
+        = f.submit "SEND", class: "submit__btn"
     .container__right
       .review
-        = form.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
+        = f.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
