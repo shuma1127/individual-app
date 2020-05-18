@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [:edit, :show, :update]
+  before_action :set_post, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(12)
-    # @images = @post.images
+    @posts = Post.includes(:user, :images).order("created_at DESC").page(params[:page]).per(12)
+    # @posts = Post.includes(:images).order('created_at DESC').page(params[:page]).per(12)
   end
 
   def new
@@ -23,8 +23,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
+    @post.destroy
     redirect_to root_path
   end
 
@@ -33,6 +32,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
+      
       redirect_to root_path
     else
       render :edit
@@ -52,7 +52,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:word, :title, :genre, :review, :place, images_attributes: [:src]).merge(user_id: current_user.id)
+    params.require(:post).permit(:word, :title, :genre, :review, :place, images_attributes:  [:src, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_post

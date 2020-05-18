@@ -15,6 +15,5 @@
           = link_to "ログイン", new_user_session_path, class: 'right__log'
           = link_to "新規登録", new_user_registration_path, class: 'right__post'
 .contents-form.row
-  .container
-    = form_with(model: @post, local: true) do |form|
-      = render partial: "form", locals: { form: form }
+  = render partial: "form"
+    
