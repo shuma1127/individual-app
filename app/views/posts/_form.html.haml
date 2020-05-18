@@ -1,16 +1,13 @@
 .container
   = form_with(model: @post, local: true) do |f|
     .container__left
-      .title
-        = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
-      .genre
-        = f.text_field :genre, class: "genre__text", placeholder: "genre"
-      .place
-        = f.text_field :place, class: "place__text", placeholder: "place"
-      .word
-        = f.text_field :word, class: "word__text", placeholder: "word"
       .image-form
         #image-box
+          #image-box
+          #previews
+            - if @post.persisted?
+              - @post.images.each_with_index do |image, i|
+                = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
           = f.fields_for :images do |image|
             .js-file_group{"data-index" => "#{image.index}"}
               = image.file_field :src, class: 'js-file'
@@ -23,6 +20,14 @@
               = file_field_tag :src, name: "post[images_attributes][#{@post.images.count}][src]", class: 'js-file'
               .js-remove 削除
 
+      .title
+        = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
+      .genre
+        = f.text_field :genre, class: "genre__text", placeholder: "genre"
+      .place
+        = f.text_field :place, class: "place__text", placeholder: "place"
+      .word
+        = f.text_field :word, class: "word__text", placeholder: "word"
       .submit
         = f.submit "SEND", class: "submit__btn"
     .container__right
