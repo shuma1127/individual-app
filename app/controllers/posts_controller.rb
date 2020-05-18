@@ -31,12 +31,18 @@ class PostsController < ApplicationController
   end
 
   def update
+<<<<<<< HEAD
     if @post.update(post_params)
       
       redirect_to root_path
     else
       render :edit
     end
+=======
+    post = Post.find(params[:id])
+    post.update(post_params)
+    redirect_to post_path(post.id)
+>>>>>>> parent of c43a59c... jsでフォームの生成
   end
 
   def show

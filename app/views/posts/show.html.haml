@@ -2,9 +2,14 @@
   = render partial: "header"
 .container
   .container__left
+<<<<<<< HEAD
     - @post.images.each do |image|
       = link_to image.src.url, 'data-lightbox': image do 
         = image_tag image.src.url, class: "image__show"
+=======
+    =  link_to @post.image.url, 'data-lightbox': @post.image do 
+      = image_tag @post.image.url, class: "image-show"
+>>>>>>> parent of c43a59c... jsでフォームの生成
     .more
     - if user_signed_in? && current_user.id == @post.user_id
       -# %span
