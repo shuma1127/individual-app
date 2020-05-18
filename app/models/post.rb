@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
 
+  has_many :images
   has_many :bookmarks
   has_many :users, through: :bookmarks
 
