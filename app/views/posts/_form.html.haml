@@ -3,7 +3,6 @@
     .container__left
       .image-form
         #image-box
-          #image-box
           #previews
             - if @post.persisted?
               - @post.images.each_with_index do |image, i|
@@ -11,7 +10,6 @@
           = f.fields_for :images do |image|
             .js-file_group{"data-index" => "#{image.index}"}
               = image.file_field :src, class: 'js-file'
-              %br/
               %span.js-remove 
                 = icon('far', 'times-circle', class: 'icon')
             - if @post.persisted?

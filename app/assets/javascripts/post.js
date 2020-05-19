@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', ()=> {
     const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="post[images_attributes][${num}][src]"
-                    id="post_images_attributes_${num}_src"><br>
+                    id="post_images_attributes_${num}_src">
                     <div class="js-remove"><i class="far fa-times-circle"></i></div>
                   </div>`;
     return html;
