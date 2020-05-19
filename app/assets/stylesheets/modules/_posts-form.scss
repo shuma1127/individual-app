@@ -1,77 +1,115 @@
-.container {
-  height: calc(100vh - 140px);
-  margin: 30px 40px 30px 80px;
+.contents-form.row{
+  padding: 30px;
+  .container {
+    // background-color: gray;
+    height: calc(100vh - 160px);
     &__left {
-      height: 100%;
-      width: 30%;
+      float: left;
+      .image-form{
+          #image-box {
+            #image-box{
+            }
+            #previews{
+              width: 500px;
+              height: 200px;
+              border: 1px solid black;
+              align-items: center; 
+              flex-wrap: wrap;
+              overflow-x: auto;
+              display: flex;
+              img {
+                margin-left: 10px;
+                margin-top: 5px;
+                width: 150px;
+                height: 150px;
+              }
+            }
+
+          }
+      }
+    }
+    &__right {
       float: left;
     }
-      .title {
-        padding: 10px 0px;
-        &__text {
-          height: 40px;
-          width: 300px;
-        }
-      }
-      .genre {
-        padding: 10px 0px;
-        &__text {
-          height: 40px;
-          width: 300px;
-        }
-      }
-      .place {
-        padding: 10px 0px;
-        &__text {
-          height: 40px;
-          width: 300px;
-        }
-      }
-      .word {
-        padding: 10px 0px;
-        &__text {
-          height: 40px;
-          width: 300px;
-        }
-      }
-      .image-form {
-        padding: 10px 0px;
-        text-decoration:none;
-        &__text {
-        }
-      }
-      .submit {
-        padding: 10px 0px;
-        height: 300px;
-        &__btn {
-          width: 50px;
-        }
-      }
-      .time {
-        padding: 10px 0px;
-      }
-      .image-show {
-        border: 3px solid black;
-        height: 200px;
-        width: 298px;
-      }
-  &__right {
-    width: 70%;
-    height: 100%;
-    float: left;
-    .review {
-      &__text {
-        width: 90%;
-        height: 500px;
-      }
-    }
-    .review-show {
-      margin: 0 auto;
-      overflow: scroll;
-      border: 1px solid black;
-      height: 500px;
-      width: 90%;
-    }
-    
   }
 }
+// .container {
+//   height: calc(100vh - 140px);
+//   margin: 30px 40px 30px 80px;
+//     &__left {
+//       height: 100%;
+//       width: 30%;
+//       float: left;
+//     }
+//       .title {
+//         padding: 10px 0px;
+//         &__text {
+//           height: 40px;
+//           width: 300px;
+//         }
+//       }
+//       .genre {
+//         padding: 10px 0px;
+//         &__text {
+//           height: 40px;
+//           width: 300px;
+//         }
+//       }
+//       .place {
+//         padding: 10px 0px;
+//         &__text {
+//           height: 40px;
+//           width: 300px;
+//         }
+//       }
+//       .word {
+//         padding: 10px 0px;
+//         &__text {
+//           height: 40px;
+//           width: 300px;
+//         }
+//       }
+//       .image-form {
+//         padding: 10px 0px;
+//         text-decoration:none;
+//         &__text {
+//         }
+//       }
+//       .submit {
+//         padding: 10px 0px;
+//         height: 300px;
+//         .submit__btn {
+//           height: 40px;
+//           width: 300px;
+//           text-decoration: none;
+//           color: black;
+//         }
+//       }
+//       .time {
+//         padding: 10px 0px;
+//       }
+//       .image-show {
+//         border: 3px solid black;
+//         height: 200px;
+//         width: 298px;
+//       }
+//   &__right {
+//     width: 70%;
+//     height: 100%;
+//     float: left;
+//     .review {
+//       &__text {
+//         width: 90%;
+//         height: 500px;
+//       }
+//     }
+//     .review-show {
+//       margin: 0 auto;
+//       overflow: scroll;
+//       border: 1px solid black;
+//       height: 500px;
+//       width: 90%;
+//     }
+    
+//   }
+// }
