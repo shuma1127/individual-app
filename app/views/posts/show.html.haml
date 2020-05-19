@@ -16,7 +16,7 @@
           = link_to '削除', post_path(@post.id), method: :delete, class: "more_list__raight"
     .name
       %span.name
-        = link_to @post.user.nickname, user_path(@post.user.id), class: "aiueo"
+        = link_to @post.user.nickname, user_path(@post.user.id), class: "name__post"
     .title
       %span Title：
       = @post.title
