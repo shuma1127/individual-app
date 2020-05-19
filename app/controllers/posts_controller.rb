@@ -10,16 +10,16 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.images.new
+    # @post.images.new
   end
 
   def create
     @post = Post.create(post_params)
-    if @post.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    redirect_to root_path
+    # if @post.save
+    # else
+    #   render :new
+    # end
   end
 
   def destroy
@@ -31,12 +31,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      
-      redirect_to root_path
-    else
-      render :edit
-    end
+    # if 
+    @post.update(post_params)
+    redirect_to root_path
+    # else
+    #   render :edit
+    # end
   end
 
   def show

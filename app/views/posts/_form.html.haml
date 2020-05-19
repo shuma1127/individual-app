@@ -1,25 +1,6 @@
 .container
   = form_with(model: @post, local: true) do |f|
     .container__left
-      .image-form
-        #image-box
-          #image-box
-          #previews
-            - if @post.persisted?
-              - @post.images.each_with_index do |image, i|
-                = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
-          = f.fields_for :images do |image|
-            .js-file_group{"data-index" => "#{image.index}"}
-              = image.file_field :src, class: 'js-file'
-              %br/
-              %span.js-remove 削除
-            - if @post.persisted?
-              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-          - if @post.persisted?
-            .js-file_group{"data-index" => "#{@post.images.count}"}
-              = file_field_tag :src, name: "post[images_attributes][#{@post.images.count}][src]", class: 'js-file'
-              .js-remove 削除
-
       .title
         = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
       .genre
@@ -33,3 +14,10 @@
     .container__right
       .review
         = f.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
+      
+        -# #image-box
+        -#   = f.fields_for :images do |image|
+        -#     .js-file_group{"data-index" => "#{image.index}"}
+        -#       = image.file_field :src, class: 'js-file'
+        -#       %br/
+        -#       %span.js-remove 削除

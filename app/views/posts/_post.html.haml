@@ -30,7 +30,7 @@
       .image
         - post.images.each do |image|
           = link_to image.src.url, 'data-lightbox': image do 
-            = image_tag image.src.url, class: "image__post"
+            - image_tag image.src.url, class: "image__post"
 
         -# - if post.image
           -# =  link_to post.image.url, 'data-lightbox': post.image do 
