@@ -2,9 +2,9 @@
   = render partial: "header"
 .container
   .container__left
-    - @post.images.each do |image|
-      = link_to image.src.url, 'data-lightbox': image do 
-        = image_tag image.src.url, class: "image__show"
+    -# - @post.images.each do |image|
+    -#   = link_to image.src.url, 'data-lightbox': image do 
+    -#     = image_tag image.src.url, class: "image__show"
     .more
     - if user_signed_in? && current_user.id == @post.user_id
       -# %span
