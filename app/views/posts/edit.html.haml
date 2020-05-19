@@ -1,20 +1,4 @@
 .header
-  .header__name
-    = link_to "Restaurant　reviews", root_path, class: 'header__title' 
-  .header__posts
-    .right
-      - if user_signed_in?
-        .mypage
-          = link_to current_user.nickname, user_path(current_user), class: "mypage__name"
-        .post
-          = link_to "新規投稿", new_post_path, class: "post__new"
-        .log
-          = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "log__out"
-      - else
-        .header__posts__right
-          = link_to "ログイン", new_user_session_path, class: 'right__log'
-          = link_to "新規登録", new_user_registration_path, class: 'right__post'
+  = render "header"
 .contents-form.row
-  .container
-    = form_with(model: @post, local: true) do |form|
-      = render partial: "form", locals: { form: form }
+  = render partial: "form"
