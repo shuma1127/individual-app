@@ -7,8 +7,6 @@
         = image_tag image.src.url, class: "image__show"
     .more
     - if user_signed_in? && current_user.id == @post.user_id
-      -# %span
-      -#   = image_tag 'arrow_top.png'
       %ul.more_list
         %li
           = link_to '編集', edit_post_path(@post.id), method: :get, class: "more_list__left"
@@ -16,7 +14,7 @@
           = link_to '削除', post_path(@post.id), method: :delete, class: "more_list__raight"
     .name
       %span.name
-        = link_to @post.user.nickname, user_path(@post.user.id), class: "aiueo"
+        = link_to @post.user.nickname, user_path(@post.user.id), class: "name__post"
     .title
       %span Title：
       = @post.title
