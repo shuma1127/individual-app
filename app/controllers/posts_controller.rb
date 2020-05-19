@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:user, :images).order("created_at DESC").page(params[:page]).per(12)
-    # @posts = Post.includes(:images).order('created_at DESC').page(params[:page]).per(12)
   end
 
   def new
@@ -32,7 +31,6 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      
       redirect_to root_path
     else
       render :edit
