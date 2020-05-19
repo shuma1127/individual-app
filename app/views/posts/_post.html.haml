@@ -13,8 +13,9 @@
       .word
         %span A word:
         = post.word
-      .time
-        = post.created_at.to_s(:datetime_jp)
+      .genre
+        %span genre:
+        = post.genre
       %ul.more
         %li= link_to '詳細', post_path(post.id), method: :get, class: "show-btn"
         %li
