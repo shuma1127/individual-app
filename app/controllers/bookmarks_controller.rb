@@ -1,7 +1,7 @@
 class BookmarksController < ApplicationController
 
   def index
-    @bookmarks = Bookmark.where(user_id: current_user.id).all
+    @bookmarks = Bookmark.where(user_id: current_user.id).all.order("created_at DESC").page(params[:page]).per(12)
   end
 
   def create
