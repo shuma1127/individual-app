@@ -4,14 +4,14 @@ $(document).on('turbolinks:load', ()=> {
     const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="post[images_attributes][${num}][src]"
-                    id="post_images_attributes_${num}_src"><br>
+                    id="post_images_attributes_${num}_src">
                     <div class="js-remove"><i class="far fa-times-circle"></i></div>
                   </div>`;
     return html;
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="150px" height="150px">`;
     return html;
   }
 

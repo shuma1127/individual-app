@@ -3,7 +3,6 @@
     .container__left
       .image-form
         #image-box
-          #image-box
           #previews
             - if @post.persisted?
               - @post.images.each_with_index do |image, i|
@@ -11,7 +10,6 @@
           = f.fields_for :images do |image|
             .js-file_group{"data-index" => "#{image.index}"}
               = image.file_field :src, class: 'js-file'
-              %br/
               %span.js-remove 
                 = icon('far', 'times-circle', class: 'icon')
             - if @post.persisted?
@@ -22,6 +20,7 @@
               .js-remove 
                 = icon('far', 'times-circle', class: 'icon')
 
+    .container__right
       .title
         = f.text_field :title, class: "title__text", placeholder: "title" , rows: "10"
       .genre
@@ -32,6 +31,5 @@
         = f.text_field :word, class: "word__text", placeholder: "word"
       .submit
         = f.submit "SEND", class: "submit__btn"
-    .container__right
-      .review
-        = f.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
+    .review
+      = f.text_area :review, class: "review__text", placeholder: "review" , rows: "10"
