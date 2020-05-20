@@ -91,95 +91,14 @@
       &__text {
         margin-left: 10px;
         width: 40%;
-        height: 600px;
+        height: 550px;
       }
     }
     .review-show {
       margin: 0 auto;
       overflow: scroll;
       border: 1px solid black;
-      height: 500px;
       width: 90%;
     }
   }
 }
-// .container {
-//   height: calc(100vh - 140px);
-//   margin: 30px 40px 30px 80px;
-//     &__left {
-//       height: 100%;
-//       width: 30%;
-//       float: left;
-//     }
-//       .title {
-//         padding: 10px 0px;
-//         &__text {
-//           height: 40px;
-//           width: 300px;
-//         }
-//       }
-//       .genre {
-//         padding: 10px 0px;
-//         &__text {
-//           height: 40px;
-//           width: 300px;
-//         }
-//       }
-//       .place {
-//         padding: 10px 0px;
-//         &__text {
-//           height: 40px;
-//           width: 300px;
-//         }
-//       }
-//       .word {
-//         padding: 10px 0px;
-//         &__text {
-//           height: 40px;
-//           width: 300px;
-//         }
-//       }
-//       .image-form {
-//         padding: 10px 0px;
-//         text-decoration:none;
-//         &__text {
-//         }
-//       }
-//       .submit {
-//         padding: 10px 0px;
-//         height: 300px;
-//         .submit__btn {
-//           height: 40px;
-//           width: 300px;
-//           text-decoration: none;
-//           color: black;
-//         }
-//       }
-//       .time {
-//         padding: 10px 0px;
-//       }
-//       .image-show {
-//         border: 3px solid black;
-//         height: 200px;
-//         width: 298px;
-//       }
-//   &__right {
-//     width: 70%;
-//     height: 100%;
-//     float: left;
-//     .review {
-//       &__text {
-//         width: 90%;
-//         height: 500px;
-//       }
-//     }
-//     .review-show {
-//       margin: 0 auto;
-//       overflow: scroll;
-//       border: 1px solid black;
-//       height: 500px;
-//       width: 90%;
-//     }
-    
-//   }
-// }
