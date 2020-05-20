@@ -16,8 +16,9 @@
         .word
           %span A word:
           = bookmark.post.word
-        .time
-          = bookmark.post.created_at.to_s(:datetime_jp)
+        .genre
+          %span Genre:
+          = bookmark.post.genre
         %ul.more
           %li= link_to '詳細', post_path(bookmark.post.id), method: :get, class: "show-btn"
           %li
@@ -26,7 +27,7 @@
             - else
               = link_to icon('fas', 'book'), bookmark_path(bookmark.post.id),method: :delete, class: "bookmark-btn"
           - if user_signed_in? && current_user.id == bookmark.post.user_id
-            %li= link_to icon('far', 'times-circle', class: 'icon'), post_path(bookmark.post.id), method: :delete, class: "destroy-btn"
+            %li= link_to icon('fas', 'trash-alt', class: 'icon'), post_path(bookmark.post.id), method: :delete, class: "destroy-btn"
             %li= link_to icon('fas', 'edit', class: 'edit'), edit_post_path(bookmark.post.id), method: :get, class: "edit-btn"
         .image
           - bookmark.post.images.each do |image| 
