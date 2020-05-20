@@ -1,8 +1,10 @@
 .contents-form.row{
   padding: 30px;
+  overflow: scroll;
+  background-color: #fcfcfc;
   .container {
     // background-color: gray;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 180px);
     &__left {
       float: left;
       .image-form{
@@ -37,6 +39,68 @@
     }
     &__right {
       float: left;
+      margin-left: 10px;
+      .title {
+        padding-bottom: 10px;
+        &__text {
+          height: 40px;
+          width: 300px;
+        }
+      }
+      .genre {
+        padding: 10px 0px;
+        &__text {
+          height: 40px;
+          width: 300px;
+        }
+      }
+      .place {
+        padding: 10px 0px;
+        &__text {
+          height: 40px;
+          width: 300px;
+        }
+      }
+      .word {
+        padding: 10px 0px;
+        &__text {
+          height: 40px;
+          width: 300px;
+        }
+      }
+      .image-form {
+        padding: 10px 0px;
+        text-decoration:none;
+        &__text {
+        }
+      }
+      .submit {
+        padding: 50px 0px;
+        .submit__btn {
+          width: 300px;
+          color: red;
+          cursor: pointer;
+        }
+      }
+      .image-show {
+        border: 3px solid black;
+        height: 200px;
+        width: 298px;
+      }
+    }
+    .review {
+      &__text {
+        margin-left: 10px;
+        width: 40%;
+        height: 600px;
+      }
+    }
+    .review-show {
+      margin: 0 auto;
+      overflow: scroll;
+      border: 1px solid black;
+      height: 500px;
+      width: 90%;
     }
   }
 }
