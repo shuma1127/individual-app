@@ -2,8 +2,8 @@
   padding: 30px;
   overflow: scroll;
   background-color: #fcfcfc;
+  height: calc(100vh - 120px);
   .container {
-    height: calc(100vh - 180px);
     &__left {
       float: left;
       .image-form{
