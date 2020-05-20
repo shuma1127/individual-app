@@ -187,24 +187,29 @@
       }
       .more {
         display: flex;
-        padding-bottom: 5px;
+        margin: 5px 0px;
         .show-btn {
           background-color: slategray;
           border:1px solid slategray;
           color: white;
           border-radius:  5px; 
           box-shadow: 0 4px 0 0px gray;
+          font-size: 18px;
+          margin-left: 10px;
         }
         .bookmark-btn {
-          padding-left: 15px;
           color: #9ACD33;
+          margin-left: 20px;
+          font-size: 20px;
         }
         .destroy-btn{
-          padding-left: 15px;
+          margin-left: 20px;
           color: red;
+          font-size: 20px;
         }
         .edit-btn {
-          padding: 15px;
+          margin-left: 20px;
+          font-size: 20px;
           color: royalblue;
         }
       }

@@ -20,9 +20,9 @@
         %li= link_to '詳細', post_path(post.id), method: :get, class: "show-btn"
         %li
           - if !Bookmark.exists?(user_id:current_user.id,post_id:post.id)
-            = link_to icon('fas', 'book-open'), bookmarks_path(post_id: post.id),method: :post,class: "bookmark-btn"
+            = link_to icon('fas', 'book-open') + "追加", bookmarks_path(post_id: post.id),method: :post,class: "bookmark-btn"
           - else
-            = link_to icon('fas', 'book'), bookmark_path(post.id),method: :delete,class: "bookmark-btn"
+            = link_to icon('fas', 'book') + "解除", bookmark_path(post.id),method: :delete,class: "bookmark-btn"
 
         - if user_signed_in? && current_user.id == post.user_id
           %li= link_to icon('fas', 'trash-alt', class: 'icon'), post_path(post.id), method: :delete, class: "destroy-btn"

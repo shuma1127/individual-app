@@ -15,7 +15,7 @@ class BookmarksController < ApplicationController
   def destroy
     if bookmark = Bookmark.find_by(user_id: current_user.id,post_id:params[:id])
       bookmark.delete
-      redirect_to root_path
+      redirect_to root_path, notice: 'ブックマークを解除しました'
     else
       flash.now[:alert] = "予期せぬエラーが発生しました。"
     end
