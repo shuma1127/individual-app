@@ -84,4 +84,3 @@ gem 'devise'
 gem 'kaminari'
 gem "jquery-rails"
 gem 'mini_racer', platforms: :ruby
-gem 'sqlite3'
