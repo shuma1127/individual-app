@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :word
       t.string :title
       t.string :genre
-      t.string :review
+      t.text :review
       t.timestamps
     end
   end

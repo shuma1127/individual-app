@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_104947) do
     t.string "word"
     t.string "title"
     t.string "genre"
-    t.string "review"
+    t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
