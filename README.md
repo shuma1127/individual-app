@@ -23,6 +23,47 @@ Things you may want to cover:
 
 * ...
 
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
+### Association
+- has_many :posts
+- has_many :bookmarks
+
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|place|string|null|
+|word|string|null|
+|title|string|null|
+|genre|string|null|
+|review|text|null|
+### Association
+- belongs_to :user
+- has_many :bookmarks
+- has_many :users, through: :bookmarks
+- has_many :images, dependent: :destroy
+
+## bookmarksテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :post
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_id||references|null:false,foreign_key: true|
+|image|string|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+
 # アプリ名
 individual-app
 
