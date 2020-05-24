@@ -1,7 +1,6 @@
 .account {
   width: 100vw;
   height: calc(100vh - 90px);
-  // padding: 30px 50px;
   background-position: center;
   background-size: 100%;
   .account-page {
@@ -33,15 +32,6 @@
         font-size: 50px;
         font-weight: 200;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-        
-
-        // &:after {
-        //   content: '';
-        //   display: block;
-        //   width: 60px;
-        //   margin-top: 5px;
-        //   border-bottom: 1px solid green;
-        // }
       }
 
       .btn {
@@ -151,10 +141,3 @@
     }
   }
 }
-// .footer-log {
-//   position: absolute;
-//   bottom: 0;
-//   width: 100%;
-//   background-color: black;
-//   height: 50px;
-// }
