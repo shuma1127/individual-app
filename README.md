@@ -1,69 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
-|nickname|string|null: false|
-### Association
-- has_many :posts
-- has_many :bookmarks
-
-## postsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|place|string|null|
-|word|string|null|
-|title|string|null|
-|genre|string|null|
-|review|text|null|
-### Association
-- belongs_to :user
-- has_many :bookmarks
-- has_many :users, through: :bookmarks
-- has_many :images, dependent: :destroy
-
-## bookmarksテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :post
-
-## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|post_id||references|null:false,foreign_key: true|
-|image|string|null: false, foreign_key: true|
-### Association
-- belongs_to :post
-
 # アプリ名
 individual-app
 
@@ -79,10 +13,9 @@ individual-app
 
 そこで、学んできたことを生かして上記の２点をまとめたアプリを作成したいと思いました。
 
-
 # 工夫したポイント
 アプリ：URL:http://46.51.229.224/
-ログインID：test@gmauil.com
+ログインID：test@gmail.com
 パスワード：testtest
 開発環境：Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 内容：食べ歩きの記録を投稿できるアプリ
@@ -126,8 +59,6 @@ GIF：https://gyazo.com/b505537b56e137cbd899183f2dc7991b
 ②アプリ作成を進めていくとボタンが増えてしまったのでハンバーガーメニューでまとめ、画像の邪魔にならないようにする。
 メニューの画像：https://gyazo.com/85951f1d36495dd825ae1fb9f9916afd
 
-
-
 # 苦労した点
 
 当初設計していたものと形が変わってしまったことです。
@@ -155,3 +86,46 @@ GIF：https://gyazo.com/b505537b56e137cbd899183f2dc7991b
 ・レスポンシブデザイン
 食べ歩きの写真は携帯で撮影することが多いと思っています。
 なのでレスポンシブデザインをて学習し、携帯でもわかりやすく表示も綺麗に行えるようにしたいです。
+
+# データベース設計
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
+### Association
+- has_many :posts
+- has_many :bookmarks
+
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|place|string|null|
+|word|string|null|
+|title|string|null|
+|genre|string|null|
+|review|text|null|
+### Association
+- belongs_to :user
+- has_many :bookmarks
+- has_many :users, through: :bookmarks
+- has_many :images, dependent: :destroy
+
+## bookmarksテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :post
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_id||references|null:false,foreign_key: true|
+|image|string|null: false, foreign_key: true|
+### Association
+- belongs_to :post
